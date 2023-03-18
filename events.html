@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lambda</title>
+</head>
+<body>
+    <input id = "elem" type="button" onclick = "sayHello()" value="Click me">
+</body>
+<script>
+    function sayHello() {
+        for(let i=1; i<=3; i++) {
+            alert("Hello " + i);
+        }
+    };
+    elem.onclick = function(e){
+        for(let i=1; i<=3; i++) {
+            alert("Hello " + i);
+        }
+    };
+    function handler1(e) {
+        alert('Thanks!');
+    };
+
+    function handler2(e) {
+        alert('Thanks again!');
+    };
+
+    elem.onclick = () => alert("Hello");
+    elem.addEventListener("click", handler1); // Thanks!
+    elem.addEventListener("click", handler2);  // Thanks again!
+    // elem.removeEventListener("click", handler2);
+</script>
+</html>
